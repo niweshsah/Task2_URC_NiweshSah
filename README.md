@@ -72,7 +72,7 @@ Before you can run the node, make sure you have the following installed:
     source ~/.bashrc
     ```
 
-## Launching Nodes for Autonomous Navigation
+## Launching Nodes for Autonomous Navigation Using Custom Planner
 
 ### 1. Start the ROS Master
 
