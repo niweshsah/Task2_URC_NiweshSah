@@ -41,7 +41,7 @@ Before you can run the node, make sure you have the following installed:
     source /opt/ros/noetic/setup.bash
      export TURTLEBOT3_MODEL=burger
      source ~/catkin_ws/devel/setup.bash
-    ```
+     ```
 
      Then, open terminal:
      ```bash
@@ -139,7 +139,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
 3. **Creating new folder**
 
- ```bash
+    ```bash
      cd ~/catkin_ws/src/global_planner/
      mkdir plugins
     ```
