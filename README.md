@@ -121,11 +121,14 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
 ## Creating a Custom Global Planner from Scratch
 
-1. **Record the Terminal Commands**
+1. **Creating new package**
 
-    Use a screen recording tool (e.g., OBS Studio) to capture the terminal commands and the ROS nodes in action.
+    Delete the existing global_planner package and make a new one using following command:
+     ```bash
+    catkin_create_pkg global_planer roscpp nav_core nav_msgs tf tf2 std_msgs sensor_msgs geometry msgs 
+    ```
 
-2. **Demonstrate the Algorithm**
+3. **Demonstrate the Algorithm**
 
     Show the following in your video:
     - Starting the ROS master.
@@ -135,7 +138,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
     - Setting navigation goals in RViz.
     - The TurtleBot3 navigating autonomously to the goals.
 
-3. **Include Command Line Commands**
+4. **Include Command Line Commands**
 
     Ensure all the command line commands are visible in the recording to help others follow along.
 
