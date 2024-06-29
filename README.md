@@ -155,7 +155,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      #include <pluginlib/class_list_macros.h>
      #include <ros/ros.h>
      ```
-     4.2 ** Define your class that inherits from nav_core::BaseGlobalPlanner: **
+     4.2 **Define your class that inherits from nav_core::BaseGlobalPlanner:**
 
     ```bash
     class MyGlobalPlanner : public nav_core::BaseGlobalPlanner {
