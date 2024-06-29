@@ -127,7 +127,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      ```bash
      cd ~/catkin_ws/src/
      rm -rf global_planner
-     catkin_create_pkg global_planer roscpp nav_core nav_msgs tf tf2 std_msgs sensor_msgs geometry msgs 
+     catkin_create_pkg global_planer roscpp nav_core nav_msgs tf std_msgs sensor_msgs geometry msgs 
     ```
 
 2. **Build the workspace**
@@ -148,6 +148,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
 4. **Writing C++ code for Global Planner**
 
+     It is recommend that you save the file as "global_planner.cpp".
     4.1. **Include necessary headers in your source file:**
    
      ```bash
@@ -187,15 +188,53 @@ The modified BFS algorithm used for the global planner is designed to efficientl
          return true;
      }
    ```
-5. **Update CMake.txt**
+5. **Update CMakeLists.txt**
 
+     Add the following to your CMakeLists.txt to export the plugin:
+      ```bash
+    install(TARGETS global_planner
+        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+     )
+    ```
+      Update your CMakeLists.txt to build the global planner:
+   ```bash
+    add_library(global_planner plugins/global_planner.cpp)
+     add_dependencies(global_planner ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+     target_link_libraries(global_planner ${catkin_LIBRARIES}) 
+    ```
+     
+7. **Make plugin.xml for Global Planner**
 
-6. **Make plugin.xml for Global Planner**
+     Open terminal and write:
+   
+     ```bash
+    cd ~/catkin_ws/src/global_planner/
+    touch global_planner_plugin.xml
+    ```
+     Modify this plugin.xml with the following code:
+   
+     ```bash
+    <library path="lib/libglobal_planner">
+    <class name="global_planner/MyGlobalPlanner"
+           type="global_planner::MyGlobalPlanner"
+           base_class_type="nav_core::BaseGlobalPlanner">
+        <description>
+            My custom global planner implementation.
+        </description>
+         </class>
+     </library>
+    ```
 
+9. **Update the package.xml file**
+     Add the following line at end of package.xml inside the <package>:
+     ```bash
+       <export>
+         <!-- Other tools can request additional information be placed here -->
+         <nav_core plugin="${prefix}/global_planner_plugin.xml" />
+       </export>
+    ```
 
-7. **Update the package.xml file**
-
-
+     This links the package.xml to our plugin.xml
 ## Troubleshooting
 
 If you encounter any issues, check the following:
