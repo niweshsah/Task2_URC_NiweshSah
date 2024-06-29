@@ -148,14 +148,14 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
 4. **Writing C++ code for Global Planner**
 
-    4.1 **Include necessary headers in your source file:**
+    4.1. **Include necessary headers in your source file:**
    
      ```bash
      #include <nav_core/base_global_planner.h>
      #include <pluginlib/class_list_macros.h>
      #include <ros/ros.h>
      ```
-     4.2 **Define your class that inherits from nav_core::BaseGlobalPlanner:**
+     4.2. **Define your class that inherits from nav_core::BaseGlobalPlanner:**
 
     ```bash
     class MyGlobalPlanner : public nav_core::BaseGlobalPlanner {
@@ -170,7 +170,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
      ```
 
-   4.3 **Implement the constructor and methods:**
+   4.3. **Implement the constructor and methods:**
      ```bash
    MyGlobalPlanner::MyGlobalPlanner() {}
 
@@ -187,6 +187,14 @@ The modified BFS algorithm used for the global planner is designed to efficientl
          return true;
      }
    ```
+5. **Update CMake.txt**
+
+
+6. **Make plugin.xml for Global Planner**
+
+
+7. **Update the package.xml file**
+
 
 ## Troubleshooting
 
