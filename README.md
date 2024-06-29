@@ -224,8 +224,8 @@ The modified BFS algorithm used for the global planner is designed to efficientl
    
      ```bash
     <library path="lib/libglobal_planner">
-    <class name="global_planner/MyGlobalPlanner"
-           type="global_planner::MyGlobalPlanner"
+    <class name="global_planner/GlobalPlanner"
+           type="global_planner::GlobalPlanner"
            base_class_type="nav_core::BaseGlobalPlanner">
         <description>
             My custom global planner implementation.
