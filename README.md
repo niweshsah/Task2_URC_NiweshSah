@@ -275,25 +275,6 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
      Follow the steps given above to do the autonomous navigation using your custom global planner.
 
-    
-## Troubleshooting
-
-If you encounter any issues, check the following:
-- Ensure all dependencies are installed.
-- Verify the nodes are being run in the correct environment.
-- Check ROS logs for error messages.
-
-```bash
-roslaunch global_planner global_planner.launch
-```
-
-> **Note:** If you have any custom configurations or environment variables set, ensure they are properly configured before running the nodes.
-
-## Contributing
-
-If you would like to contribute, please fork the repository and create a pull request with your changes.
-
-## License
 
 Include information about the licensing of your project.
 
