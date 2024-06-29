@@ -169,7 +169,24 @@ The modified BFS algorithm used for the global planner is designed to efficientl
           };
 
      ```
-   
+
+   4.3 **Implement the constructor and methods:**
+     ```bash
+   MyGlobalPlanner::MyGlobalPlanner() {}
+
+     MyGlobalPlanner::MyGlobalPlanner(std::string name, costmap_2d::Costmap2DROS* costmap_ros) {
+    initialize(name, costmap_ros);
+     }
+
+     void MyGlobalPlanner::initialize(std::string name, costmap_2d::Costmap2DROS* costmap_ros) {
+         // Initialization code here
+     }
+
+     bool MyGlobalPlanner::makePlan(const geometry_msgs::PoseStamped& start, const geometry_msgs::PoseStamped& goal, std::vector<geometry_msgs::PoseStamped>& plan) {
+         // Planning algorithm here (e.g., A*, BFS)
+         return true;
+     }
+   ```
 
 ## Troubleshooting
 
