@@ -197,7 +197,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      chmod +x global_planner.cpp
     ```
    
-6. **Update CMakeLists.txt**
+5. **Update CMakeLists.txt**
 
      Add the following to your CMakeLists.txt to export the plugin:
       ```bash
@@ -212,7 +212,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      target_link_libraries(global_planner ${catkin_LIBRARIES}) 
     ```
      
-7. **Make plugin.xml for Global Planner**
+6. **Make plugin.xml for Global Planner**
 
      Open terminal and write:
    
@@ -234,7 +234,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      </library>
     ```
 
-8. **Update the package.xml file**
+7. **Update the package.xml file**
 
    Add the following line at end of package.xml inside the package tag:
    
@@ -247,13 +247,13 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
      This links the package.xml to our plugin.xml.
 
-9. **Build the Workspace**
+8. **Build the Workspace**
 
      ```bash
        cd ~/catkin_ws/
        catkin build
     ```
-10. **Updating the move_base.launch**
+9. **Updating the move_base.launch**
 
      Open the terminal and type:
     ```bash
@@ -270,7 +270,12 @@ The modified BFS algorithm used for the global planner is designed to efficientl
          <!-- Other parameters  -->
       </node>
     ```
-   
+
+10. **Running Autonomous Navigation**
+
+     Follow the steps given above to do the autonomous navigation using your custom global planner.
+
+    
 ## Troubleshooting
 
 If you encounter any issues, check the following:
