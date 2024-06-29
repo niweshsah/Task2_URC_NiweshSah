@@ -54,24 +54,6 @@ Before you can run the node, make sure you have the following installed:
     mv ~/catkin_ws/map.yaml ~/
     ```
 
-
-## Setting Up TurtleBot3
-
-1. **Install TurtleBot3 Packages**
-
-    ```bash
-    sudo apt-get install ros-<ros-distro>-turtlebot3
-    ```
-
-2. **Set Up Environment Variables**
-
-    Add the following lines to your `.bashrc` file:
-
-    ```bash
-    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-    source ~/.bashrc
-    ```
-
 ## Launching Autonomous Navigation Nodes Using Custom Global Planner
 
 To run the node, use the following command:
