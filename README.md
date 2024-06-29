@@ -265,9 +265,9 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      ```bash
       <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
          <param name="base_global_planner" value="global_planner/GlobalPlanner" />
-         <!-- If you don't put this line, turtlebot will use the default global planner /> -->
+         <!-- If you don't put this line, turtlebot will use the default global planner -->
     
-         <!-- Other parameters /> -->
+         <!-- Other parameters  -->
       </node>
     ```
    
