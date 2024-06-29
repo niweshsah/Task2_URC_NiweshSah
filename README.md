@@ -84,7 +84,7 @@ This will start 4 terminals:
 .  As soon as x, y, θ are set, TurtleBot3 will start moving to the destination immediately.
 
 
-## Explanation of the Algorithm
+## Explanation of the Global Planner Algorithm
 
 ### Modified Breadth-First Search (BFS) for Path Planning
 
