@@ -188,6 +188,14 @@ The modified BFS algorithm used for the global planner is designed to efficientl
          return true;
      }
    ```
+
+     4.4. **Make the file executable**
+
+   ```bash
+     cd ~/catkin_ws/src/global_planner/plugins
+     chmod +x global_planner.cpp
+    ```
+   
 5. **Update CMakeLists.txt**
 
      Add the following to your CMakeLists.txt to export the plugin:
@@ -203,7 +211,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      target_link_libraries(global_planner ${catkin_LIBRARIES}) 
     ```
      
-7. **Make plugin.xml for Global Planner**
+6. **Make plugin.xml for Global Planner**
 
      Open terminal and write:
    
@@ -225,9 +233,10 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      </library>
     ```
 
-9. **Update the package.xml file**
+7. **Update the package.xml file**
 
-   Add the following line at end of package.xml inside the <package>:
+   Add the following line at end of package.xml inside the package tag:
+   
      ```bash
        <export>
          <!-- Other tools can request additional information be placed here -->
@@ -235,7 +244,16 @@ The modified BFS algorithm used for the global planner is designed to efficientl
        </export>
     ```
 
-     This links the package.xml to our plugin.xml
+     This links the package.xml to our plugin.xml.
+
+8. **Build the Workspace**
+
+     ```bash
+       cd ~/catkin_ws/
+       catkin build
+    ```
+9. 
+   
 ## Troubleshooting
 
 If you encounter any issues, check the following:
