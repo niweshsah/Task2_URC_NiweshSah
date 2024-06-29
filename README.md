@@ -125,22 +125,32 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
     Delete the existing global_planner package and make a new one using following command:
      ```bash
-    catkin_create_pkg global_planer roscpp nav_core nav_msgs tf tf2 std_msgs sensor_msgs geometry msgs 
+     cd ~/catkin_ws/src/
+     rm -rf global_planner
+     catkin_create_pkg global_planer roscpp nav_core nav_msgs tf tf2 std_msgs sensor_msgs geometry msgs 
     ```
 
-3. **Demonstrate the Algorithm**
+2. **Build the workspace**
 
-    Show the following in your video:
-    - Starting the ROS master.
-    - Launching the TurtleBot3 simulation.
-    - Launching the SLAM node.
-    - Running the `global_planner` node.
-    - Setting navigation goals in RViz.
-    - The TurtleBot3 navigating autonomously to the goals.
+    ```bash
+     cd ~/catkin_ws/
+     catkin build
+    ```
 
-4. **Include Command Line Commands**
+3. **Creating new folder**
+
+ ```bash
+     cd ~/catkin_ws/src/global_planner/
+     mkdir plugins
+    ```
+
+     It is recommended that you put your global planner C++ codes inside this folder.
+
+4. **Writing C++ code for Global Planner**
 
     Ensure all the command line commands are visible in the recording to help others follow along.
+
+   
 
 ## Troubleshooting
 
