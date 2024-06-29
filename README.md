@@ -72,53 +72,35 @@ Before you can run the node, make sure you have the following installed:
     source ~/.bashrc
     ```
 
-## Launching Nodes for Autonomous Navigation Using Custom Planner
+## Launching Autonomous Navigation Nodes Using Custom Global Planner
 
-### 1. Start the ROS Master
-
-```bash
-roscore
-```
-
-### 2. Launch TurtleBot3 Simulation (if using a simulator)
-
-In a new terminal, run:
+To run the node, use the following command:
 
 ```bash
-roslaunch turtlebot3_gazebo turtlebot3_world.launch
+rosrun main_launch python_start_launches.py 
 ```
+This will start 4 terminals:
+1. Rosmaster
+2. Gazebo world simulation with turtlebot3
+3. RVIZ
+4. Teleoperation node
 
-### 3. Launch SLAM for Mapping and Localization
+## Initial Pose Estimation 
 
-In another terminal, run:
+1. Click the 2D Pose Estimate button in the RViz menu.
+2. Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
+3. Repeat step 1 and 2 until the LDS sensor data is overlayed on the saved map.
+4. Use keyboard teleoperation node to precisely locate the robot on the map.
+5. Move the robot back and forth a bit to collect the surrounding environment information and narrow down the estimated location of the TurtleBot3 on the map which is displayed with tiny green arrows.
+6. Terminate the keyboard teleoperation node by entering Ctrl + C to the teleop node terminal in order to prevent different cmd_vel values are published from multiple nodes during Navigation.
 
-```bash
-roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-```
+## Set Navigation Goal
+1. Click the 2D Nav Goal button in the RViz menu.
+2. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
+.  This green arrow is a marker that can specify the destination of the robot.
+.  The root of the arrow is x, y coordinate of the destination, and the angle θ is determined by the orientation of the arrow.
+.  As soon as x, y, θ are set, TurtleBot3 will start moving to the destination immediately.
 
-### 4. Launch the Global Planner Node
-
-In another terminal, run:
-
-```bash
-rosrun global_planner global_planner_node
-```
-
-### 5. Launch RViz for Visualization
-
-In another terminal, run:
-
-```bash
-roslaunch turtlebot3_slam turtlebot3_slam_rviz.launch
-```
-
-### 6. Send Navigation Goals
-
-Use `rviz` to send navigation goals by setting the `2D Nav Goal` in RViz.
-
-## Usage
-
-The `global_planner` node will handle the path planning for the TurtleBot3. Use RViz to visualize the robot's environment and set navigation goals.
 
 ## Explanation of the Algorithm
 
