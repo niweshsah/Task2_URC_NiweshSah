@@ -226,7 +226,8 @@ The modified BFS algorithm used for the global planner is designed to efficientl
     ```
 
 9. **Update the package.xml file**
-     Add the following line at end of package.xml inside the <package>:
+
+   Add the following line at end of package.xml inside the <package>:
      ```bash
        <export>
          <!-- Other tools can request additional information be placed here -->
