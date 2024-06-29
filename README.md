@@ -149,6 +149,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 4. **Writing C++ code for Global Planner**
 
      It is recommend that you save the file as "global_planner.cpp".
+   
     4.1. **Include necessary headers in your source file:**
    
      ```bash
@@ -196,7 +197,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      chmod +x global_planner.cpp
     ```
    
-5. **Update CMakeLists.txt**
+6. **Update CMakeLists.txt**
 
      Add the following to your CMakeLists.txt to export the plugin:
       ```bash
@@ -211,7 +212,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      target_link_libraries(global_planner ${catkin_LIBRARIES}) 
     ```
      
-6. **Make plugin.xml for Global Planner**
+7. **Make plugin.xml for Global Planner**
 
      Open terminal and write:
    
@@ -233,7 +234,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
      </library>
     ```
 
-7. **Update the package.xml file**
+8. **Update the package.xml file**
 
    Add the following line at end of package.xml inside the package tag:
    
@@ -246,13 +247,29 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
      This links the package.xml to our plugin.xml.
 
-8. **Build the Workspace**
+9. **Build the Workspace**
 
      ```bash
        cd ~/catkin_ws/
        catkin build
     ```
-9. 
+10. **Updating the move_base.launch**
+
+     Open the terminal and type:
+    ```bash
+       roscd turtlebot3_navigation/
+       cd launch/
+    ```
+     Now update the move_base.launch file by adding the paramater for our Global Planner
+    
+     ```bash
+      <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+         <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+         <!-- If you don't put this line, turtlebot will use the default global planner /> -->
+    
+         <!-- Other parameters /> -->
+      </node>
+    ```
    
 ## Troubleshooting
 
