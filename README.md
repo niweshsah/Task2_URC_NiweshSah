@@ -119,7 +119,7 @@ The modified BFS algorithm used for the global planner is designed to efficientl
 
 **Dijkstra's Algorithm** is more versatile as it accounts for varying edge costs, making it ideal for environments where the cost of movement between nodes differs. It uses a priority queue to explore nodes in the order of their cumulative cost from the start node.
 
-## Creating a Demonstration Video
+## Creating a Custom Global Planner from Scratch
 
 1. **Record the Terminal Commands**
 
